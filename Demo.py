@@ -4,7 +4,7 @@ This is an example to showcase a Spark job on a Kubernetes cluster.
 It reads the historical taxi CSV, curates a few helper columns, and emits four bite-sized tables that
 are easy to verify during the demo run (trips per day, payment mix, busiest hours, and trip-length buckets).
 """
-from typing import Optional, Tuple
+from typing import Optional
 
 from pyspark.sql import SparkSession, functions as F, types as T
 
@@ -31,32 +31,6 @@ SCHEMA = T.StructType(
         T.StructField("total_amount", T.DoubleType(), False),
     ]
 )
-
-
-def prompt_runtime_values() -> Tuple[str, str, int]:
-    """Ask the operator for the input/output locations right in the terminal."""
-
-    def _ask(msg: str) -> str:
-        while True:
-            value = input(msg).strip()
-            if value:
-                return value
-            print("Please enter a non-empty value.")
-
-    input_path = _ask("Path to taxi CSV (e.g. local:///opt/spark/data/taxi-data.csv): ")
-    output_path = _ask("Directory to store outputs (e.g. s3a://demo/taxi-output): ")
-
-    while True:
-        display_raw = input("Rows to show in Spark driver logs [10]: ").strip()
-        if not display_raw:
-            display_rows = 10
-            break
-        if display_raw.isdigit():
-            display_rows = int(display_raw)
-            break
-        print("Please enter a whole number, or leave blank for the default of 10.")
-
-    return input_path, output_path, display_rows
 
 
 def prepare(df):
@@ -86,8 +60,10 @@ def save(df, root: str, name: str) -> None:
 
 
 def main() -> Optional[int]:
-    # 1. Parse user-supplied parameters (input, output, how many rows to display)
-    input_path, output_path, display_rows = prompt_runtime_values()
+    # 1. Use hard-coded parameters so the demo is entirely hands-off once launched
+    input_path = "<REPLACE_WITH_INPUT_PATH>"  # e.g. local:///opt/spark/data/taxi-data-sorted-small.csv
+    output_path = "<REPLACE_WITH_OUTPUT_DIR>"  # e.g. s3a://my-bucket/taxi-output
+    display_rows = 10
     # 2. Create or reuse a SparkSession; in Kubernetes this is done inside the driver pod
     spark = SparkSession.builder.appName("TaxiSparkK8sDemo").getOrCreate()
     try:
