@@ -61,8 +61,8 @@ def save(df, root: str, name: str) -> None:
 
 def main() -> Optional[int]:
     # 1. Use hard-coded parameters so the demo is entirely hands-off once launched
-    input_path = "gs://assignment5bda/taxi-data-sorted-large.csv.bz2"  # e.g. local:///opt/spark/data/taxi-data-sorted-small.csv
-    output_path = "gs://assignment5bda"  # e.g. s3a://my-bucket/taxi-output
+    input_path = "research-paper/taxi-data-sorted-small.csv"  # e.g. local:///opt/spark/data/taxi-data-sorted-small.csv
+    output_path = "/home/master"  # e.g. s3a://my-bucket/taxi-output
     display_rows = 10
     # 2. Create or reuse a SparkSession; in Kubernetes this is done inside the driver pod
     spark = SparkSession.builder.appName("TaxiSparkK8sDemo").getOrCreate()

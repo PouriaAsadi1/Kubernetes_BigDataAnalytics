@@ -1,0 +1,13 @@
+"""Data Visualization.
+
+Here we visualize the csv data that is produced from Spark. 
+"""
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load dataset
+df_busiest_hours = pd.read_csv('/Users/pouriaasadi/busiest_hours/part-00000-a8fe8608-af72-427c-9c2d-dd8e18a2ad2f-c000.csv')
+df_payment_mix = pd.read_csv('/Users/pouriaasadi/payment_mix/part-00000-129c17f1-2e08-4754-8f46-e32ddc8729d4-c000.csv')
+df_trips_per_day = pd.read_csv('/Users/pouriaasadi/trips_per_day/part-00000-99ea6922-8c72-4a19-9e72-5420893bbd4a-c000.csv')
+df_trip_lengths = pd.read_csv('/Users/pouriaasadi/trip_lengths/part-00000-90431d5e-cd0b-4e04-8d1f-e545fd1a48ac-c000.csv')
