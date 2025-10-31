@@ -3,6 +3,7 @@
 # Taxi Dataset Analysis:
 
 - **Daily Trip Volume**
+
   Objective: 
   We aimed to measure how the number of taxi trips varied by day during early January 2013 to understand general activity patterns in New York City.
 
@@ -13,6 +14,7 @@
   
 
 - **Payment Type Distribution**
+
   Objective: 
   We sought to understand how passengers paid for their rides and the relative frequency of each payment method.
 
@@ -23,6 +25,7 @@
 
 
 - **Hourly Trip Distribution**
+
   Objective: 
   We wanted to examine when taxi trips were most frequent during a typical day to identify demand peaks.
 
@@ -33,6 +36,7 @@
 
 
 - **Trip Distance Distribution**
+
   Objective: 
   We measured how trip frequency changed with distance to understand travel behavior and demand concentration.
 
