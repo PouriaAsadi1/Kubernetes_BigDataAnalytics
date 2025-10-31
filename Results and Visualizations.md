@@ -1,6 +1,7 @@
 # Results
 
 # Taxi Dataset Analysis:
+The data obtained from both the Kubernetes cluster and Google Cloud Dataproc Cluster were consistent with eachother
 
 - **Daily Trip Volume**
 
@@ -47,3 +48,24 @@
 
   Findings:
   Short-distance trips under 3 miles were the most common, representing the majority of all rides. As trip distance increased, the number of trips decreased. Only a small portion of trips exceeded 10 miles, confirming that     most taxi usage occurs within short urban ranges.
+
+
+
+
+- **Google Cloud Dataproc Cluster Specs:**
+- Nodes and machine shapes
+• Master: 1× n4-standard-2 (2 vCPU, ~8 GB RAM), boot disk 100 GB Hyperdisk Balanced
+• Workers: 2× n4-standard-2 (each 2 vCPU, ~8 GB RAM), boot disk 200 GB Hyperdisk Balanced
+• Spark properties (key defaults): executor.instances=2, executor.cores=1, executor.memory=2893m, driver.memory=2048m, scheduler=FAIR, DataprocSparkPlugin enabled
+
+- Execution time from Spark History:
+  
+<img width="1723" height="388" alt="Screenshot 2025-10-30 at 10 14 00 PM" src="https://github.com/user-attachments/assets/610840f9-0358-4261-bd47-15c9a3d8ce25" />
+
+Execution time was 30 minutes
+
+- Cost:
+
+<img width="1411" height="203" alt="GC Demo Cost" src="https://github.com/user-attachments/assets/ea33d2c4-faaf-4423-9575-3eb481643274" />
+
+
