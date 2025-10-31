@@ -5,9 +5,11 @@
 - Daily Trip Volume
   Objective: 
   We aimed to measure how the number of taxi trips varied by day during early January 2013 to understand general activity patterns in New York City.
+
+<img width="1200" height="600" alt="trips_per_day" src="https://github.com/user-attachments/assets/75310e3e-90f1-4e32-8ea3-38536ef7fb42" />
   
   Findings: 
-  The results show a steady flow of trips between 390,000 and 480,000 per day from January 1 to January 10. This indicates consistent demand for taxi transportation across weekdays and weekends, with slightly higher activity   during the first weekend of the month.
+  The dataset includes 365 daily records from January through December 2013. Trip counts ranged between roughly 390,000 and 480,000 per day, with consistent activity across the year. Days with higher totals tended to align     with weekends and holidays, reflecting increased leisure and nighttime transportation. The overall stability of trip volume suggests that taxi demand remained strong and predictable throughout 2013, providing a solid         baseline for analyzing revenue and operational efficiency.
 
 - Payment Type Distribution
   Objective: 
