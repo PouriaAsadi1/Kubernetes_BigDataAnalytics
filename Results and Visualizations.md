@@ -54,9 +54,9 @@ The data obtained from both the Kubernetes cluster and Google Cloud Dataproc Clu
 
 - **Google Cloud Dataproc Cluster Specs:**
 - Nodes and machine shapes
-• Master: 1× n4-standard-2 (2 vCPU, ~8 GB RAM), boot disk 100 GB Hyperdisk Balanced
-• Workers: 2× n4-standard-2 (each 2 vCPU, ~8 GB RAM), boot disk 200 GB Hyperdisk Balanced
-• Spark properties (key defaults): executor.instances=2, executor.cores=1, executor.memory=2893m, driver.memory=2048m, scheduler=FAIR, DataprocSparkPlugin enabled
+Master: 1× n4-standard-2 (2 vCPU, ~8 GB RAM), boot disk 100 GB Hyperdisk Balanced
+Workers: 2× n4-standard-2 (each 2 vCPU, ~8 GB RAM), boot disk 200 GB Hyperdisk Balanced
+Spark properties (key defaults): executor.instances=2, executor.cores=1, executor.memory=2893m, driver.memory=2048m, scheduler=FAIR, DataprocSparkPlugin enabled
 
 - Execution time from Spark History:
   
