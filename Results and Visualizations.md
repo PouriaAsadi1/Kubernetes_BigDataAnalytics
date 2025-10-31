@@ -13,6 +13,7 @@
   The dataset includes 365 daily records from January through December 2013. Trip counts ranged between roughly 390,000 and 480,000 per day, with consistent activity across the year. Days with higher totals tended to align     with weekends and holidays, reflecting increased leisure transportation.
   
 
+
 - **Payment Type Distribution**
 
   Objective: 
@@ -24,6 +25,7 @@
   Credit card and cash payments dominated the data, accounting for the vast majority of trips. Credit card transactions slightly outnumbered cash ones, suggesting a growing reliance on electronic payments. A small fraction     of trips used other categories such as corporate or discount accounts.
 
 
+
 - **Hourly Trip Distribution**
 
   Objective: 
@@ -33,6 +35,7 @@
   
   Findings:
   Trip volume was highest around midnight and during the morning commute hours from 7 to 9 a.m. This pattern suggests strong activity during nightlife periods and daily work commutes. Lower trip counts were observed in mid-    afternoon and early evening hours.
+
 
 
 - **Trip Distance Distribution**
