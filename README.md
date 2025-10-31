@@ -8,46 +8,30 @@ Kubernetes is widely used in cloud-native and distributed systems. Understanding
 
 ## Project Goals
 
-- Explain key Kubernetes concepts and architecture (control plane, nodes, kubelet, kube-proxy, container runtimes, etc.).
+- Explain key Kubernetes concepts and architecture.
 - Study and demonstrate:
   - Cluster formation and node communication
   - Horizontal scaling of workloads (scale up / scale down)
   - Resource allocation and scheduling behavior (CPU/memory requests & limits)
   - Self-healing behaviors (pod restarts, node failures, rollout and rollback)
-- Deploy experiments on 2–3 virtual machines hosted on a single physical machine and observe the cluster behavior.
+- Deploy experiments on a virtual machine hosted on a single physical machine and observe the cluster behavior.
 - Collect and visualize runtime metrics to draw conclusions about system behavior under varying loads.
 
 ## Experimental Setup
 
-- Host: single physical machine running a desktop/server OS (Linux recommended).
-- Virtualization: 2–3 virtual machines (VMs) created on the host (VirtualBox, VMware, or libvirt).
-- Kubernetes deployment approach: kubeadm (recommended for educational clusters) or a lightweight local alternative (kind, minikube) for quicker setups.
-- Container runtime: containerd or Docker (depending on Kubernetes version and distribution).
-- Monitoring and metrics: metrics-server, Prometheus, and Grafana (for collecting and visualizing cluster and application metrics).
-- Tooling: kubectl, kubeadm, ssh access to VMs, and a load generator (hey, siege, or custom scripts).
+- Host: single physical machine running a desktop/server OS. 
+- Virtualization: virtual machines (VMs) created on the host.
+- Kubernetes deployment approach: 
+- Container runtime: 
+- Tooling: kubectl, kubeadm, ssh access to VMs, and a load generator. 
 
 ## What We Will Measure
 
-- Node and pod status under normal and failure scenarios.
-- Scheduling decisions when requests/limits are applied.
-- Autoscaling behavior when Horizontal Pod Autoscaler (HPA) is enabled.
-- Rollout and rollback behavior for application updates.
-- Resource usage trends (CPU, memory) and latency under load.
-- Time-to-recover for pods and services during induced failures.
+We will be running some sample data analysis on the 2013 Taxi Data. The result from the data will be provided in the repo. We will also be comparing and contrasting the Kubernetes cluster and a Google Cloud Dataproc cluster by looking at the following: 
 
-## Monitoring & Analysis
-
-- Metrics collected:
-  - Pod and node CPU/memory usage
-  - Pod restarts and events
-  - Scheduling latency and pod start time
-  - Application-level latency and error rates
-- Visualization:
-  - Pre-configured Grafana dashboards in monitoring/dashboards/
-  - Prometheus rules and recording rules in monitoring/prometheus/
-- Reports:
-  - Analysis of each experiment with charts, explanations, and takeaways are in reports/.
-
+- Execution time
+- Job monitoring and management
+- Cost and ease of use
 
 ## References
 
