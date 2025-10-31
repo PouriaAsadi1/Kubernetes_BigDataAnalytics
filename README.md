@@ -35,57 +35,6 @@ Kubernetes is widely used in cloud-native and distributed systems. Understanding
 - Resource usage trends (CPU, memory) and latency under load.
 - Time-to-recover for pods and services during induced failures.
 
-## Repository Structure
-
-- docs/ — design notes, architecture diagrams, measurement plans, and literature references.
-- experiments/ — reproducible experiment manifests, scripts, and results.
-- infra/ — VM setup scripts, kubeadm config, and provisioners.
-- monitoring/ — Prometheus and Grafana manifests, dashboards, and alerting rules.
-- apps/ — sample applications (deployment manifests) used in experiments.
-- reports/ — final analysis, graphs, tables, and conclusions.
-
-(Adjust structure as the project evolves — this is a suggested organization for reproducibility.)
-
-## Quickstart — Reproducing Our Experiments
-
-Prerequisites:
-- A host machine capable of running 2–3 VMs with at least 8GB RAM (recommended).
-- Virtualization software (e.g., VirtualBox) or a cloud account.
-- SSH client and basic Linux command-line skills.
-
-High-level steps:
-1. Provision 2–3 VMs using the scripts in infra/ or manually create them.
-2. Install prerequisites on each VM: container runtime, kubelet, kubeadm, kubectl.
-3. Initialize the control plane on one VM:
-   - kubeadm init --config infra/kubeadm-config.yaml
-4. Join worker VMs using the kubeadm join token produced during init.
-5. Install a CNI plugin (Weave Net, Calico, Flannel) as shown in infra/cni/ manifests.
-6. Deploy metrics-server, Prometheus, and Grafana from monitoring/.
-7. Deploy sample application(s) from apps/ and apply scaling/test scripts from experiments/.
-8. Run load generators and run the experiments outlined in experiments/plan.md.
-9. Collect and visualize metrics in Grafana dashboards provided in monitoring/dashboards/.
-
-Detailed, step-by-step commands and parameterized scripts are in infra/ and experiments/.
-
-## Example Experiments
-
-- Scaling test:
-  - Deploy a stateless web service.
-  - Use HPA to scale pods based on CPU utilization.
-  - Gradually increase load and observe scaling events, pod scheduling, and node resource utilization.
-- Rollout and rollback:
-  - Deploy a new application image with a faulty change.
-  - Observe rollout behavior, failed pod states, and perform a rollback.
-  - Measure time taken to restore service and the effect on running requests.
-- Node failure:
-  - Simulate a node failure by shutting down a worker VM.
-  - Track pod rescheduling, service availability, and recovery time.
-- Resource constraint scheduling:
-  - Deploy pods with varying requests/limits.
-  - Observe scheduler decisions, pending pods, and eviction behavior.
-
-Experiment manifests, measurement scripts, and raw results are stored in experiments/.
-
 ## Monitoring & Analysis
 
 - Metrics collected:
@@ -100,18 +49,8 @@ Experiment manifests, measurement scripts, and raw results are stored in experim
   - Analysis of each experiment with charts, explanations, and takeaways are in reports/.
 
 
-## Expected Outcomes
-
-- A clear, reproducible demonstration of Kubernetes scaling, scheduling, and self-healing behaviors.
-- Insights into how resource requests/limits and cluster size affect scheduling and performance.
-- A set of experiment artifacts (manifests, scripts, dashboards) that can be reused for future learning or projects.
-
 ## References
 
 - Kubernetes official documentation: https://kubernetes.io
 - kubeadm guides, CNI plugin docs (Calico/Weave), Prometheus & Grafana docs.
-- Research and articles about container orchestration and distributed systems (see docs/references.md).
-
 ---
-
-If additional details are needed (detailed setup commands, cloud-specific variants, or assistance preparing VM images and automation scripts), the team can expand the infra/ and docs/ folders and add step-by-step walkthroughs.# Kubernetes_BigDataAnalytics
