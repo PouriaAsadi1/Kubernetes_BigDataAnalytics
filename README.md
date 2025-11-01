@@ -21,8 +21,6 @@ Kubernetes is widely used in cloud-native and distributed systems. Understanding
 
 - Host: single physical machine running a desktop/server OS. 
 - Virtualization: virtual machines (VMs) created on the host.
-- Kubernetes deployment approach: 
-- Container runtime: 
 - Tooling: kubectl, kubeadm, ssh access to VMs, and a load generator. 
 
 ## What We Will Measure
