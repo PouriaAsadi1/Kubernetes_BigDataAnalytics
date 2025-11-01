@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: spark-driver-template
+  labels:
+    app: spark
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: master
+  restartPolicy: Never
+  containers:
+    - name: spark-kubernetes-driver
+      image: 10.20.0.63:5000/spark-py:taxi-demo
+      volumeMounts:
+        - name: research
+          mountPath: /opt/spark/work-dir
+  volumes:
+    - name: research
+      hostPath:
+        path: /mnt/data
+        type: Directory
