@@ -83,3 +83,19 @@ Workers: 4× (~8 GB RAM)
 Execution time was 9.4 minutes
 
 
+## Summary and Analysis
+
+- Data consistency:
+  - Outputs from both the Kubernetes and Google Cloud Dataproc clusters are reported as consistent, indicating reproducible analytics across environments.
+
+- Platform performance comparison:
+  - Dataproc (n4-standard-2, 1× master + 4× workers; FAIR scheduler; modest driver/executor memory): Completed in ~15 minutes.
+  - Kubernetes (1× master + 4× workers, each ~8 GB RAM): Completed faster at ~9.4 minutes.
+  - Interpretation: For this workload and configuration, the Kubernetes deployment executed the Spark job ~37% faster. Differences may stem from cluster/runtime tuning, scheduling overheads, storage locality, or image/runtime optimizations. Results show that a well-configured K8s environment can be at least competitive and in this run, faster—than the managed Dataproc setup.
+
+- Takeaways and next steps:
+  - Both platforms produced consistent analytical results.
+  - For this job, Kubernetes delivered lower wall-clock time than Dataproc given the stated configurations.
+
+Overall, the analysis shows that a Kubernetes-based Spark deployment can perform very well compared to a Dataproc setup for this workload under the tested configurations.
+
