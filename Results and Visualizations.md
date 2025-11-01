@@ -69,3 +69,17 @@ Execution time was 15 minutes
 <img width="1411" height="203" alt="GC Demo Cost" src="https://github.com/user-attachments/assets/ea33d2c4-faaf-4423-9575-3eb481643274" />
 
 
+
+
+- **Kubernetes Cluster Specs:**
+- Nodes and machine shapes
+Master: 1× (~8 GB RAM)
+Workers: 4× (~8 GB RAM)
+
+- Execution time from Spark History:
+
+<img width="1724" height="462" alt="Screenshot 2025-10-31 at 8 28 56 PM" src="https://github.com/user-attachments/assets/6a3c7d33-1f3c-4fc8-a746-4268c515be38" />
+
+Execution time was 9.4 minutes
+
+
