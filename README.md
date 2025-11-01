@@ -22,6 +22,22 @@ Kubernetes is widely used in cloud-native and distributed systems. Understanding
 - Virtualization: virtual machines (VMs) created on the host.
 - Tooling: kubectl, kubeadm, ssh access to VMs, and a load generator. 
 
+## Example
+
+``` shell
+spark-submit \
+  --master k8s://https://<cluster-driver-ip>:6443 \
+  --deploy-mode cluster \
+  --name taxi-demo-large \
+  --conf spark.eventLog.enabled=true \
+  --conf spark.eventLog.dir=file:///opt/spark/work-dir/spark-events \
+  --conf spark.history.fs.logDirectory=file:///opt/spark/work-dir/spark-events \
+  --conf spark.kubernetes.container.image=<image-server>:5000/spark-py:taxi-demo \
+  --conf spark.kubernetes.driver.podTemplateFile=/home/master/research-paper/pod-template.yaml \
+  --conf spark.kubernetes.executor.podTemplateFile=/home/master/research-paper/executor-pod-template.yaml \
+  local:///opt/spark/work-dir/Demo.py
+```
+
 ## Comparison/Analysis
 
 We will be running some sample data analysis on the 2013 Taxi Data. The result from the data will be provided in the repo. We will also be comparing and contrasting the Kubernetes cluster and a Google Cloud Dataproc cluster by looking at metrics such as cost, execution time, ease of use, etc.
