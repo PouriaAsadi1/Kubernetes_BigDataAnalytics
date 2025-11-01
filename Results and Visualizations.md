@@ -62,7 +62,7 @@ Spark properties (key defaults): executor.instances=2, executor.cores=1, executo
    
 <img width="1723" height="388" alt="Screenshot 2025-10-30 at 10 14 00 PM" src="https://github.com/user-attachments/assets/7d361b4f-e664-496c-bd2f-29ed8270fcfb" />
 
-Execution time was 30 minutes
+Execution time was 15 minutes
 
 - Cost:
 
