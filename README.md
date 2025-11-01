@@ -13,7 +13,6 @@ Kubernetes is widely used in cloud-native and distributed systems. Understanding
   - Cluster formation and node communication
   - Horizontal scaling of workloads (scale up / scale down)
   - Resource allocation and scheduling behavior (CPU/memory requests & limits)
-  - Self-healing behaviors (pod restarts, node failures, rollout and rollback)
 - Deploy experiments on a virtual machine hosted on a single physical machine and observe the cluster behavior.
 - Collect and visualize runtime metrics to draw conclusions about system behavior under varying loads.
 
@@ -23,13 +22,9 @@ Kubernetes is widely used in cloud-native and distributed systems. Understanding
 - Virtualization: virtual machines (VMs) created on the host.
 - Tooling: kubectl, kubeadm, ssh access to VMs, and a load generator. 
 
-## What We Will Measure
+## Comparison/Analysis
 
-We will be running some sample data analysis on the 2013 Taxi Data. The result from the data will be provided in the repo. We will also be comparing and contrasting the Kubernetes cluster and a Google Cloud Dataproc cluster by looking at the following: 
-
-- Execution time
-- Job monitoring and management
-- Cost and ease of use
+We will be running some sample data analysis on the 2013 Taxi Data. The result from the data will be provided in the repo. We will also be comparing and contrasting the Kubernetes cluster and a Google Cloud Dataproc cluster by looking at metrics such as cost, execution time, ease of use, etc.
 
 ## References
 
